@@ -1,8 +1,4 @@
-import roman0 as r0
-import roman1 as r1
-import roman2 as r2
-import roman3 as r3
-import roman4 as r4
+import roman0 as roman
 import unittest
 
 class KnownValue(unittest.TestCase):
@@ -72,6 +68,18 @@ class KnownValue(unittest.TestCase):
         for integer, numeral in self.knowValues:
             result = r0.fromRoman(numeral)
             self.assertEqual(integer,result)
+    
+    def testTooManyRepeatedNumerals(self):
+        for integer,numeral in self.knowValues:
+            self.assertRaises(roman.InvalidRomanNumeralError, roman.fromRoman,numeral)
+        
+    def testRepeatedPairs(self):
+        for integer,numeral in self.knowValues:
+            self.assertRaises(roman.InvalidRomanNumeralError, roman.fromRoman,numeral)
+    
+    def testMalformedAntecedent(self):
+        for integer,numeral in self.knowValues:
+            self.assertRaises(roman.InvalidRomanNumeralError, roman.fromRoman,numeral)
 
 
 if __name__ == "__main__":
