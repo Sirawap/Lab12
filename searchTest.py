@@ -3,9 +3,13 @@ import unittest
 
 class pre_condition_test(unittest.TestCase):
     def dataListIsNotInteger(self):
-        self.assertRaises(bs.NotIntegerError,bs.binsearch,[0.1,0.2,0.3],2)
+        test = ['a',0.5]
+        for x in test:
+            self.assertRaises(bs.NotIntegerError,bs.binsearch,[x,2,3],2)
     def keyIsNotInteger(self):
-        self.assertRaises(bs.NotIntegerError,bs.binsearch,[1,2,3,4,5],0.2)
+        test = ['a',0.5]
+        for x in test:
+            self.assertRaises(bs.NotIntegerError,bs.binsearch,[1,2,3,4,5],x)
 
 class KnownValue(unittest.TestCase):
     knowValues = (([0, 1, 2, 3, 4, 5], 3, 3),
