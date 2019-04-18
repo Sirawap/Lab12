@@ -61,12 +61,12 @@ class KnownValue(unittest.TestCase):
 
     def testToRomanKnownValue(self):
         for integer, numeral in self.knowValues:
-            result = r0.toRoman(integer)
+            result = roman.toRoman(integer)
             self.assertEqual(numeral,result)
 
     def testFromRomanKnownValues(self):
         for integer, numeral in self.knowValues:
-            result = r0.fromRoman(numeral)
+            result = roman.fromRoman(numeral)
             self.assertEqual(integer,result)
 
     def testTooLarge(self):
