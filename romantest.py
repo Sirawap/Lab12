@@ -25,6 +25,16 @@ class KnownValue(unittest.TestCase):
                   (294, 'CCXCIV'),
                   (312, 'CCCXII'))
 
+    def testToRomanKnownValue(self):
+        for integer, numeral in self.knowValues:
+            result = r0.toRoman(integer)
+            self.assertEqual(numeral,result)
+
+    def testFromRomanKnownValues(self):
+        for integer, numeral in self.knowValues:
+            result = r0.fromRoman(numeral)
+            self.assertEqual(integer,result)
+
 
 if __name__ == "__main__":
     number = [1,5,10,50,100,500,1000]
