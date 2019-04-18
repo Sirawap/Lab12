@@ -59,7 +59,7 @@ class KnownValue(unittest.TestCase):
                   (3940, 'MMMCMXL'),
                   (3999, 'MMMCMXCIX'))
 
-    def testToRomanKnownValue(self):
+    def testToRomanKnownValues(self):
         for integer, numeral in self.knowValues:
             result = roman.toRoman(integer)
             self.assertEqual(numeral,result)
@@ -82,15 +82,15 @@ class KnownValue(unittest.TestCase):
         self.assertRaises(roman.NotIntegerError, roman.toRoman, 0.5)
 
     def testTooManyRepeatedNumerals(self):
-        for integer,numeral in self.knowValues:
+        for s in ('MMM','DD','CCCC','LL','XXXX','VV','IIII'):
             self.assertRaises(roman.InvalidRomanNumeralError, roman.fromRoman,numeral)
         
     def testRepeatedPairs(self):
-        for integer,numeral in self.knowValues:
+        for s in ('CMCM','CDCD','XCXC','XLXL','IXIX','IVIV'):
             self.assertRaises(roman.InvalidRomanNumeralError, roman.fromRoman,numeral)
     
     def testMalformedAntecedent(self):
-        for integer,numeral in self.knowValues:
+        for s in ('IIMXCC','VX','DCM','CMM','IXIV','MCMC','XCX','IVI','LM','LD','LC'):
             self.assertRaises(roman.InvalidRomanNumeralError, roman.fromRoman,numeral)
 
 
