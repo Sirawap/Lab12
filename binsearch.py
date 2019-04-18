@@ -1,3 +1,7 @@
+class BinsearchError(Exception): pass
+class NotIntegerError(BinsearchError): pass
+
+
 def binsearch(dataList, key):
     first = 0
     count = len(dataList)
