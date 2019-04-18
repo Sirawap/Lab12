@@ -13,3 +13,5 @@ def binsearch(dataList, key):
             count = step
 
     return first
+
+print(binsearch[0,1,2,3,4,5],2)
