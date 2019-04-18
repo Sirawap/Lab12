@@ -70,16 +70,16 @@ class KnownValue(unittest.TestCase):
             self.assertEqual(integer,result)
 
     def testTooLarge(self):
-        self.assertRaise(roman.OutOfRangeError, roman.toRoman,4000)
+        self.assertRaises(roman.OutOfRangeError, roman.toRoman,4000)
 
     def testZero(self):
-        self.assertRaise(roman.OutOfRangeError, roman.toRoman, 0)
+        self.assertRaises(roman.OutOfRangeError, roman.toRoman, 0)
 
     def testNegative(self):
-        self.assertRaise(roman.OutOfRangeError, roman.toRoman, -1)
+        self.assertRaises(roman.OutOfRangeError, roman.toRoman, -1)
 
     def testNonInteger(self):
-        self.assertRaise(roman.NotIntegerError, roman.toRoman, 0.5)
+        self.assertRaises(roman.NotIntegerError, roman.toRoman, 0.5)
 
     def testTooManyRepeatedNumerals(self):
         for integer,numeral in self.knowValues:
