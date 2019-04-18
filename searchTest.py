@@ -15,8 +15,7 @@ class KnownValue(unittest.TestCase):
                   ([0, 1, 2, 3, 4, 5], 1, 1),
                   ([0, 1, 2, 3, 4, 5], 2, 2),
                   ([0, 1, 2, 3, 4, 6], 6, 5),
-                  ([0, 1, 4, 7, 9, 10], 4, 2),
-                  ([0, 2,53,364,1235,23523], 2, 1),
+                  (5, 2, 1),
                   ([0, 2,53,364,1235,23523], 23523, 5))
 
     def testBinsearchKnownValues(self):
@@ -29,17 +28,10 @@ class Failre(unittest.TestCase):
         for _list, key, index in self.knowValues:
             result = bs.binsearch(_list,key)
             self.assertEqual(index,result)
-    '''def tooBig(self):
-        for _list, key, index in self.knowValues:
-            self.assertRaises(bs.OutOfRangeError, bs.binsearch  , _list, max(_list) + 1)
-
-    def tooSmall(self):
-        for _list, key, index in self.knowValues:
-            self.assertRaises(bs.OutOfRangeError, bs.binsearch , _list , min(_list) - 1)
-    '''
+   
     def notList(self):
         for _list, key, index in self.knowValues:
-            self.assertEqual(bs.InvalidArgument, _list, type(_list)== list)
+            self.assertRaises(bs.InvalidArgument, bs.binsearch, _list,key )
             
 class Sanity(unittest.TestCase):   
     def inRange(self):

@@ -1,9 +1,11 @@
 class BinsearchError(Exception): pass
 class NotIntegerError(BinsearchError): pass
-
+class InvalidArgument(Exception): pass
 
 def binsearch(dataList, key):
     first = 0
+    if type(dataList) != list:
+        raise InvalidArgument
     count = len(dataList)
     while 0 < count:
         step = int(count / 2)
