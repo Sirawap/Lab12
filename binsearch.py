@@ -14,4 +14,4 @@ def binsearch(dataList, key):
 
     return first
 
-print(binsearch[0,1,2,3,4,5],2)
+print(binsearch([0,1,2,3,4,5],3))
