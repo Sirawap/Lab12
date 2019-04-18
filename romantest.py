@@ -1,4 +1,4 @@
-import roman0 as roman
+import roman4 as roman
 import unittest
 
 class KnownValue(unittest.TestCase):
@@ -112,7 +112,7 @@ class CaseCheck(unittest.TestCase):
     def testFromRomanCase(self):
         ##fromRoman should only accept uppercase
         for integer in range(1,4000):
-            numeral = roman.fromRoman(integer)
+            numeral = roman.toRoman(integer)
             roman.fromRoman(numeral.upper())
             self.assertRaises(roman.InvalidRomanNumeralError,roman.fromRoman,numeral.lower())
 
