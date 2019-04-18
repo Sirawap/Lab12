@@ -3,11 +3,29 @@ import roman1 as r1
 import roman2 as r2
 import roman3 as r3
 import roman4 as r4
-import unitest
+import unittest
 
 class KnownValue(unittest.TestCase):
     knowValues = ((1,'I'),
-                  (2,'II'))
+                  (2,'II'),
+                  (3, 'III'),
+                  (4, 'IV'),
+                  (5, 'V'),
+                  (6, 'VI'),
+                  (7, 'VII'),
+                  (8, 'VIII'),
+                  (9, 'IX'),
+                  (10, 'X'),
+                  (50, 'L'),
+                  (100, 'C'),
+                  (500, 'D'),
+                  (1000, 'M'),
+                  (31, 'XXXI'),
+                  (148, 'CXLVIII'),
+                  (294, 'CCXCIV'),
+                  (312, 'CCCXII'))
+
+
 if __name__ == "__main__":
     number = [1,5,10,50,100,500,1000]
     alpha = ['I','V','X','L','C','D','M']
