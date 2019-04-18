@@ -4,6 +4,6 @@ import roman2 as r2
 import roman3 as r3
 import roman4 as r4
 
-if "__name__" == "__main__":
-    r0.toRoman(1)
-    r0.fromRoman(1)
+if __name__ == "__main__":
+    print(r0.toRoman(1))
+    print(r0.fromRoman('I'))
