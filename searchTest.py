@@ -23,6 +23,23 @@ class KnownValue(unittest.TestCase):
         for _list, key, index in self.knowValues:
             result = bs.binsearch(_list,key)
             self.assertEqual(index,result)
+
+class Failre(unittest.TestCase):
+    def testBinsearchKnownValues(self):
+        for _list, key, index in self.knowValues:
+            result = bs.binsearch(_list,key)
+            self.assertEqual(index,result)
+    '''def tooBig(self):
+        for _list, key, index in self.knowValues:
+            self.assertRaises(bs.OutOfRangeError, bs.binsearch  , _list, max(_list) + 1)
+
+    def tooSmall(self):
+        for _list, key, index in self.knowValues:
+            self.assertRaises(bs.OutOfRangeError, bs.binsearch , _list , min(_list) - 1)
+    '''
+    def notList(self):
+        for _list, key, index in self.knowValues:
+            self.assertEqual(bs.InvalidArgument, _list, type(_list)== list)
             
 class Sanity(unittest.TestCase):   
     def inRange(self):
