@@ -113,7 +113,7 @@ class CaseCheck(unittest.TestCase):
         ##fromRoman should only accept uppercase
         for integer in range(1,4000):
             numeral = roman.fromRoman(integer)
-            roman.fromRoman(numeral).upper())
+            roman.fromRoman(numeral.upper())
             self.assertRaises(roman.InvalidRomanNumeralError,roman.fromRoman,numeral.lower())
 
 if __name__ == "__main__":
