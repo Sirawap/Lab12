@@ -102,6 +102,19 @@ class SanityCheck(unittest.TestCase):
             result = roman.fromRoman(numeral)
             self.assertEqual(integer,result)
 
+class CaseCheck(unittest.TestCase):
+    def testToRomanCase(self):
+        ##toRoman should be upperCase
+        for integer in range(1,4000):
+            numeral = roman.toRoman(integer)
+            self.assertEqual(numeral,numeral.upper())
+
+    def testFromRomanCase(self):
+        ##fromRoman should only accept uppercase
+        for integer in range(1,4000):
+            numeral = roman.fromRoman(integer)
+            roman.fromRoman(numeral).upper())
+            self.assertRaises(roman.InvalidRomanNumeralError,roman.fromRoman,numeral.lower())
 
 if __name__ == "__main__":
     unittest.main()
