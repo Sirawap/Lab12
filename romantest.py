@@ -5,6 +5,9 @@ import roman3 as r3
 import roman4 as r4
 import unitest
 
+class KnownValue(unittest.TestCase):
+    knowValues = ((1,'I'),
+                  (2,'II'))
 if __name__ == "__main__":
     number = [1,5,10,50,100,500,1000]
     alpha = ['I','V','X','L','C','D','M']
