@@ -4,7 +4,6 @@ def binsearch(dataList, key):
     while 0 < count:
         step = int(count / 2)
         mid = first + step
-
         if dataList[mid] > key:
             mid += 1
             first = mid
