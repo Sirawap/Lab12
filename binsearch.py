@@ -2,7 +2,7 @@ def binsearch(dataList, key):
     first = 0
     count = len(dataList)
     while 0 < count:
-        step = count / 2
+        step = int(count / 2)
         mid = first + step
 
         if dataList[mid] > key:
@@ -13,3 +13,5 @@ def binsearch(dataList, key):
             count = step
 
     return first
+
+print(binsearch([1,2,3,4,5],3))
