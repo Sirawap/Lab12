@@ -2,11 +2,13 @@ import binsearch as bs
 import unittest
 
 class pre_condition_test(unittest.TestCase):
-    def dataListIsNotInteger(self):
+    def testdataListIsNotList(self):
+        self.assertRaises(bs.NotIntegerError,bs.binsearch,2,2)
+    def testdataListIsNotInteger(self):
         test = ['a',0.5]
         for x in test:
             self.assertRaises(bs.NotIntegerError,bs.binsearch,[x,2,3],2)
-    def keyIsNotInteger(self):
+    def testkeyIsNotInteger(self):
         test = ['a',0.5]
         for x in test:
             self.assertRaises(bs.NotIntegerError,bs.binsearch,[1,2,3,4,5],x)

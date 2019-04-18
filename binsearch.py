@@ -1,5 +1,6 @@
 class BinsearchError(Exception): pass
 class NotIntegerError(BinsearchError): pass
+class NotListError(BinsearchError): pass
 class InvalidArgument(Exception): pass
 
 def binsearch(dataList, key):
