@@ -70,16 +70,16 @@ class KnownValue(unittest.TestCase):
             self.assertEqual(integer,result)
 
     def testTooLarge(self):
-        self.assertRaise(roman.OutOfRangeError, roman.toRoman,4000)
+        self.assertRaises(roman.OutOfRangeError, roman.toRoman,4000)
 
     def testZero(self):
-        self.assertRaise(roman.OutOfRangeError, roman.toRoman, 0)
+        self.assertRaises(roman.OutOfRangeError, roman.toRoman, 0)
 
     def testNegative(self):
-        self.assertRaise(roman.OutOfRangeError, roman.toRoman, -1)
+        self.assertRaises(roman.OutOfRangeError, roman.toRoman, -1)
 
     def testNonInteger(self):
-        self.assertRaise(roman.NotIntegerError, roman.toRoman, 0.5)
+        self.assertRaises(roman.NotIntegerError, roman.toRoman, 0.5)
 
     def testTooManyRepeatedNumerals(self):
         for integer,numeral in self.knowValues:
@@ -92,6 +92,15 @@ class KnownValue(unittest.TestCase):
     def testMalformedAntecedent(self):
         for integer,numeral in self.knowValues:
             self.assertRaises(roman.InvalidRomanNumeralError, roman.fromRoman,numeral)
+
+
+class SanityCheck(unittest.TestCase):   
+    def testSanity(self):
+        ##fromRoman(toRoman(n)) == n for all n
+        for integer in range(1,4000):
+            numeral = roman.toRoman(integer)
+            result = roman.fromRoman(numeral)
+            self.assertEqual(integer,result)
 
 
 if __name__ == "__main__":
